@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { usePyodide } from "../../hooks/usePyodide";
 import CodeEditor from "../CodeEditor/CodeEditor";
 import OutputPanel from "../OutputPanel/OutputPanel";

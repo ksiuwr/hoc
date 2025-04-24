@@ -1,5 +1,3 @@
-import React, { FC } from "react";
-
 interface OutputPanelProps {
   output: string;
 }
