@@ -16,9 +16,17 @@ export function usePyodide() {
 
   const run = useCallback(
     async (code: string): Promise<string> => {
-      if (!pyodide) return "Loading Python...";
+      if (!pyodide) return "Interpreter is still loading...";
       try {
-        const result = pyodide.runPython(code);
+        const wrapped = `
+          import sys, io
+          buf = io.StringIO()
+          sys.stdout = buf
+          sys.stderr = buf
+          exec(${JSON.stringify(code)}, globals())
+          buf.getvalue()`;
+
+        const result = await pyodide.runPythonAsync(wrapped);
         return String(result ?? "");
       } catch (err: any) {
         return err.toString();
