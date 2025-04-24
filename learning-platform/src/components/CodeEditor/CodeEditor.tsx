@@ -11,7 +11,7 @@ const CodeEditor = ({ code, onChange }: CodeEditorProps) => {
     <div className="border rounded shadow-sm overflow-hidden">
       <CodeMirror
         value={code}
-        height="400px"
+        height="600px"
         extensions={[python()]}
         onChange={(value) => onChange(value)}
         theme="dark"
