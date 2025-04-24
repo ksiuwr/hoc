@@ -9,7 +9,7 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen bg-gradient-to-b from-blue-400 to-sky-900">
+    <div className="flex h-screen bg-gradient-to-b from-indigo-400">
       <div className="flex-1">
         <Playground />
       </div>

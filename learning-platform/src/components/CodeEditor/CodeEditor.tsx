@@ -8,13 +8,13 @@ interface CodeEditorProps {
 
 const CodeEditor = ({ code, onChange }: CodeEditorProps) => {
   return (
-    <div className="border rounded shadow-sm overflow-hidden mb-2">
+    <div className="border-2 border-indigo-300 rounded-lg shadow-sm overflow-hidden mb-3">
       <CodeMirror
         value={code}
         height="400px"
         extensions={[python()]}
         onChange={(value) => onChange(value)}
-        theme="dark"
+        theme="light"
         basicSetup={{
           lineNumbers: true,
           highlightActiveLine: true,

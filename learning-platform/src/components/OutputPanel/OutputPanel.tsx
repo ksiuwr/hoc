@@ -3,7 +3,10 @@ interface OutputPanelProps {
 }
 
 const OutputPanel = ({ output }: OutputPanelProps) => (
-  <pre className="mt-4 w-full max-w-2xl p-4 bg-gray-100 border rounded text-sm whitespace-pre-wrap font-mono">
+  <pre
+    className="mt-4 w-full p-4 bg-indigo-50 border-2 border-indigo-300 rounded-lg
+               text-sm shadow-sm whitespace-pre-wrap font-mono"
+  >
     {output}
   </pre>
 );
