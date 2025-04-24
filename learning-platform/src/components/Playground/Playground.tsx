@@ -13,7 +13,7 @@ const Playground = () => {
   };
 
   return (
-    <div className="items-center p-6 space-y-4">
+    <div className="items-center pl-6 py-6">
       {loading ? (
         <div>Loading Python...</div>
       ) : (

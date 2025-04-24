@@ -4,17 +4,17 @@ import "./App.css";
 
 function App() {
   const sampleTask: Task = {
-    title: "Sample Task",
-    description: "This is a sample task.",
+    title: "Zadanie 1",
+    description: `Napisz program, który wczytuje dwie liczby i wypisuje ich sumę (+).`,
   };
 
   return (
-    <div className="flex h-screen">
-      <div className="flex-1 overflow-auto">
+    <div className="flex h-screen bg-gradient-to-b from-blue-400 to-sky-900">
+      <div className="flex-1">
         <Playground />
       </div>
 
-      <div className="w-1/3 p-4 bg-gray-50 overflow-auto">
+      <div className="w-1/3 p-4 overflow-auto">
         <TaskPanel task={sampleTask} />
       </div>
     </div>
