@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { usePyodide } from "../../hooks/usePyodide";
-import CodeEditor from "../CodeEditor/CodeEditor";
-import OutputPanel from "../OutputPanel/OutputPanel";
+import CodeEditor from "./CodeEditor/CodeEditor";
+import OutputPanel from "./OutputPanel/OutputPanel";
 
 const Playground = () => {
   const { run, loading } = usePyodide();
@@ -14,7 +14,6 @@ const Playground = () => {
 
   return (
     <div className="flex flex-col items-center p-6 space-y-4">
-      <h1 className="text-3xl font-semibold">Python Playground</h1>
       {loading ? (
         <div>Loading Python...</div>
       ) : (
