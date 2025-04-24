@@ -10,7 +10,7 @@ function App() {
         <Playground />
       </div>
 
-      <div className="w-1/3 p-4 overflow-auto space-y-2">
+      <div className="w-1/3 p-4 overflow-y-scroll space-y-2">
         {tasks.map((task, index) => (
           <TaskPanel key={index} task={task} />
         ))}

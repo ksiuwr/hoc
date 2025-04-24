@@ -15,16 +15,16 @@ const Playground = () => {
   return (
     <div className="items-center ml-4 my-4 p-4 bg-slate-50 rounded-xl">
       {loading ? (
-        <div>Loading Python...</div>
+        <div>Ładowanie edytora...</div>
       ) : (
         <>
           <CodeEditor code={code} onChange={setCode} />
           <button
             className="px-20 py-2 rounded bg-indigo-500 text-white hover:bg-violet-600 transition
-                       hover:-translate-y-0.5 hover:cursor-pointer duration-300 ease-in-out"
+                       hover:-translate-y-0.5 hover:cursor-pointer duration-300 ease-in-out text-xl font-semibold"
             onClick={handleRun}
           >
-            Run
+            Uruchom
           </button>
           <OutputPanel output={output} />
         </>

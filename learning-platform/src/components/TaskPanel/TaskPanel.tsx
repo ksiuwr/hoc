@@ -21,7 +21,7 @@ const TaskPanel = ({ task }: TaskPanelProps) => {
                 transition duration-300 ease-in-out hover:-translate-y-0.5`}
     >
       <div className="flex items-center mb-2">
-        <h2 className="text-xl font-bold flex items-center">
+        <h2 className="text-2xl font-bold flex items-center">
           {task.title}
           {isDone && (
             <span className="ml-2 px-2 py-0.5 text-sm font-medium text-green-800 bg-green-200 rounded">
@@ -30,7 +30,7 @@ const TaskPanel = ({ task }: TaskPanelProps) => {
           )}
         </h2>
       </div>
-      <p className="text-gray-700">{task.description}</p>
+      <p className="text-gray-700 text-xl">{task.description}</p>
     </div>
   );
 };

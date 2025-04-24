@@ -5,7 +5,7 @@ interface OutputPanelProps {
 const OutputPanel = ({ output }: OutputPanelProps) => (
   <pre
     className="mt-4 w-full p-4 bg-indigo-50 border-2 border-indigo-300 rounded-lg
-               text-sm shadow-sm whitespace-pre-wrap font-mono"
+               text-lg shadow-sm whitespace-pre-wrap font-mono"
   >
     {output}
   </pre>
