@@ -19,12 +19,17 @@ export function usePyodide() {
       if (!pyodide) return "Interpreter is still loading...";
       try {
         const wrapped = `
-          import sys, io
-          buf = io.StringIO()
+          import sys
+          from io import StringIO
+          from js import prompt
+          import builtins
+          builtins.input = lambda propmt_text='': prompt(propmt_text)
+          buf = StringIO()
           sys.stdout = buf
           sys.stderr = buf
           exec(${JSON.stringify(code)}, globals())
-          buf.getvalue()`;
+          buf.getvalue()
+          `;
 
         const result = await pyodide.runPythonAsync(wrapped);
         return String(result ?? "");
