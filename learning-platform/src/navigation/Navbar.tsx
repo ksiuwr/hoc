@@ -1,26 +1,40 @@
-type NavLink = {
+import { NavLink } from "react-router-dom";
+
+type NavLinkItem = {
   label: string;
-  href: string;
+  to: string;
 };
 
-const links: NavLink[] = [
-  { label: "Zadania podstawowe", href: "#zadania-podstawowe" },
-  { label: "Zadania dodatkowe", href: "#zadania-dodatkowe" },
-  { label: "Test wiedzy", href: "#test-wiedzy" },
-  { label: "Skrypt", href: "#skrypt" },
+const links: NavLinkItem[] = [
+  { label: "Zadania podstawowe", to: "/zadania-podstawowe" },
+  { label: "Zadania dodatkowe", to: "/zadania-dodatkowe" },
+  { label: "Test wiedzy", to: "/test-wiedzy" },
+  { label: "Skrypt", to: "/skrypt" },
 ];
 
 export const Navbar = () => {
   return (
-    <nav className="sticky bg-gradient-to-b from-indigo-900 to-violet-900 text-white px-6 py-4 flex items-center justify-center">
+    <nav className="sticky top-0 z-50 bg-gradient-to-b from-indigo-900 to-violet-900 text-white px-6 py-4 flex items-center justify-center">
       <ul className="flex space-x-8 text-lg">
-        {links.map(({ label, href }) => (
+        {links.map(({ label, to }) => (
           <li
-            key={href}
+            key={to}
             className="hover:underline hover:-translate-y-0.5 hover:scale-105 transition-transform duration-200
                        ease-in-out hover:text-violet-100"
           >
-            <a href={href}>{label}</a>
+            <NavLink
+              to={to}
+              end
+              className={({ isActive }) =>
+                `px-4 py-1 rounded-2xl transition duration-200 ease-in-out ${
+                  isActive
+                    ? "bg-indigo-950"
+                    : ""
+                }`
+              }
+            >
+              {label}
+            </NavLink>
           </li>
         ))}
       </ul>
