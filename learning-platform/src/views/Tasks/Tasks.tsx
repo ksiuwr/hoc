@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Playground from "../../components/Playground/Playground";
 import TaskPanel, { Task } from "../../components/TaskPanel/TaskPanel";
 
@@ -29,7 +29,13 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
     categories[0] || ""
   );
 
-  const initialCompletion = useMemo(() => {
+  const getInitialCompletion = (): Record<string, boolean> => {
+    const saved = localStorage.getItem("tasksCompletion");
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {}
+    }
     const map: Record<string, boolean> = {};
     categories.forEach((category) => {
       tasksByCategory[category].forEach((task, idx) => {
@@ -37,10 +43,15 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
       });
     });
     return map;
-  }, [tasksByCategory, categories]);
+  };
 
   const [completion, setCompletion] =
-    useState<Record<string, boolean>>(initialCompletion);
+    useState<Record<string, boolean>>(getInitialCompletion);
+
+  useEffect(() => {
+    localStorage.setItem("tasksCompletion", JSON.stringify(completion));
+  }, [completion]);
+
   const handleToggle = (key: string) => {
     setCompletion((prev) => ({ ...prev, [key]: !prev[key] }));
   };
