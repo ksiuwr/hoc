@@ -8,8 +8,6 @@ import {
 import { Navbar } from "./navigation/Navbar";
 import { tasks } from "./data/tasks";
 import Tasks from "./views/Tasks/Tasks";
-import BonusTasks from "./views/BonusTasks/BonusTasks";
-import { bonusTasks } from "./data/bonusTasks";
 
 function App() {
   return (
@@ -18,10 +16,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to="/zadania-podstawowe" replace />}
+          element={<Navigate to="/zadania" replace />}
         />
-        <Route path="/zadania-podstawowe" element={<Tasks tasks={tasks} />} />
-        <Route path="/zadania-dodatkowe" element={<BonusTasks tasks={bonusTasks} />} />
+        <Route path="/zadania" element={<Tasks tasks={tasks} />} />
       </Routes>
     </Router>
   );
