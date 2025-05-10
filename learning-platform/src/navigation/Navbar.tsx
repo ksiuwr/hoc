@@ -7,7 +7,7 @@ type NavLinkItem = {
 
 const links: NavLinkItem[] = [
   { label: "Zadania", to: "/zadania" },
-  { label: "Test wiedzy", to: "/test-wiedzy" },
+  // { label: "Test wiedzy", to: "/test-wiedzy" },
   { label: "Skrypt", to: "/skrypt" },
 ];
 
