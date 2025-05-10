@@ -16,9 +16,9 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to="/zadania-podstawowe" replace />}
+          element={<Navigate to="/zadania" replace />}
         />
-        <Route path="/zadania-podstawowe" element={<Tasks tasks={tasks} />} />
+        <Route path="/zadania" element={<Tasks tasks={tasks} />} />
       </Routes>
     </Router>
   );
