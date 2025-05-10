@@ -14,7 +14,7 @@ const links: NavLinkItem[] = [
 
 export const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-b from-indigo-900 to-violet-900 text-white px-6 py-4 flex items-center justify-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-indigo-900 to-violet-900 text-white px-6 py-4 flex items-center justify-center">
       <ul className="flex space-x-8 text-lg">
         {links.map(({ label, to }) => (
           <li
