@@ -14,7 +14,8 @@
     "@uiw/react-codemirror": "^4.23.10",
     "pyodide": "^0.27.5",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
