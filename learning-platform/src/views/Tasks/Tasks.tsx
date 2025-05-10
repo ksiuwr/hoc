@@ -54,7 +54,7 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
   return (
     <div className="flex flex-col pt-14 h-screen bg-gradient-to-b from-indigo-400">
       {/* Category selector */}
-      <div className="px-4 py-3 overflow-x-auto">
+      <div className="px-4 py-2 overflow-x-auto bg-violet-900">
         <div className="flex space-x-2">
           {categories.map((category) => (
             <button
@@ -63,7 +63,7 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
               className={`px-4 whitespace-nowrap py-1 rounded-full transition duration-200 ease-in-out ${
                 category === selectedCategory
                   ? "bg-white text-indigo-600"
-                  : "bg-indigo-200 text-white hover:bg-indigo-300 cursor-pointer"
+                  : "bg-indigo-300 text-violet-900 hover:bg-indigo-100 cursor-pointer"
               }`}
             >
               {category}
@@ -72,9 +72,9 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
         </div>
       </div>
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 overflow-hidden py-2">
         {/* Task list */}
-        <div className="w-1/3 p-2 overflow-y-auto">
+        <div className="w-1/3 px-2 overflow-y-auto">
           {selectedCategory && (
             <section>
               <div className="space-y-2">
@@ -95,7 +95,7 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
         </div>
 
         {/* Playground */}
-        <div className="w-2/3 p-2">
+        <div className="w-2/3 px-2">
           <Playground />
         </div>
       </div>
