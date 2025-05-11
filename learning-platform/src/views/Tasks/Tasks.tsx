@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import Playground from "../../components/Playground/Playground";
-import TaskPanel, { Task } from "../../components/TaskPanel/TaskPanel";
+import TaskPanel, { Task } from "./TaskPanel/TaskPanel";
 import Script from "../Script/Script";
-import TasksHeader from "../../components/TaskHeader/TaskHeader";
+import TasksHeader from "./TaskHeader/TaskHeader";
 
 interface TasksProps {
   tasks: Task[];
@@ -68,7 +68,7 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
   const [showScript, setShowScript] = useState(false);
 
   return (
-    <div className="flex flex-col pt-14 h-screen bg-gradient-to-b from-indigo-400">
+    <div className="flex flex-col h-screen bg-gradient-to-b from-indigo-400">
       <TasksHeader
         categories={categories}
         selectedCategory={selectedCategory}

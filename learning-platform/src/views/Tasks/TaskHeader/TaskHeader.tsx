@@ -18,7 +18,7 @@ const TasksHeader = ({
   const baseButtonClasses =
     "px-4 whitespace-nowrap py-1 rounded-full transition duration-200 ease-in-out cursor-pointer";
   return (
-    <div className="px-4 py-2 bg-violet-900 flex items-center justify-between overflow-x-auto">
+    <div className="px-4 py-3 bg-violet-900 flex items-center justify-between overflow-x-auto">
       <div className="flex space-x-2">
         {categories.map((category) => {
           const isDone = categoryCompletion[category];

@@ -18,7 +18,7 @@ const TaskPanel = ({ task, isDone, onToggle }: TaskPanelProps) => {
   return (
     <div
       onClick={onToggle}
-      className={`p-4 ${bgClass} shadow rounded-lg w-full cursor-pointer
+      className={`p-5 ${bgClass} shadow rounded-lg w-full cursor-pointer
                 transition duration-300 ease-in-out hover:-translate-y-0.5`}
     >
       <div className="flex items-center mb-2">
