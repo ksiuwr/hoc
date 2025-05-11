@@ -13,7 +13,7 @@ const Playground = () => {
   };
 
   return (
-    <div className="items-center p-4 bg-slate-50 rounded-xl h-full">
+    <div className="items-center p-4 bg-slate-50 rounded-xl h-full overflow-auto">
       {loading ? (
         <div>Ładowanie edytora...</div>
       ) : (
