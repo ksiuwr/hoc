@@ -6,7 +6,7 @@ import script from "../../data/script.md?raw";
 
 const Script = () => {
   return (
-    <div className="px-4 py-2 overflow-auto prose max-w-none">
+    <div className="px-4 py-8 overflow-auto prose max-w-none">
       <ReactMarkdown
         children={script}
         remarkPlugins={[remarkGfm]}
