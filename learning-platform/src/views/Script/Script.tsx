@@ -1,21 +1,21 @@
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
-import script from '../../data/script.md?raw';
+import script from "../../data/script.md?raw";
 
 const Script = () => {
   return (
-    <div className="p-4 overflow-auto prose max-w-none">
+    <div className="px-4 py-2 overflow-auto prose max-w-none">
       <ReactMarkdown
         children={script}
         remarkPlugins={[remarkGfm]}
         components={{
-          code({ node, inline, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '');
-            return !inline && match ? (
-              <SyntaxHighlighter PreTag="div" language={match[1]} {...props}>
-                {String(children).replace(/\n$/, '')}
+          code({ node, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || "");
+            return match ? (
+              <SyntaxHighlighter PreTag="div" language="python">
+                {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
             ) : (
               <code className={className} {...props}>

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -16,4 +17,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #aaa;
+}
+
+pre {
+  @apply p-0 m-0 bg-indigo-200 border-2 border-indigo-300 rounded-lg text-lg shadow-sm whitespace-pre-wrap font-mono;
 }
