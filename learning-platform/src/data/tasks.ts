@@ -1,4 +1,4 @@
-import { Task } from "../components/TaskPanel/TaskPanel";
+import { Task } from "../views/Tasks/TaskPanel/TaskPanel";
 
 export const tasks: Task[] = [
   {

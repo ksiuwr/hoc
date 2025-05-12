@@ -5,14 +5,13 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
-import { Navbar } from "./navigation/Navbar";
 import { tasks } from "./data/tasks";
 import Tasks from "./views/Tasks/Tasks";
 
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route
           path="/"
