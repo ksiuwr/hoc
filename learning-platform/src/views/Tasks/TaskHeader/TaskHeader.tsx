@@ -48,7 +48,7 @@ const TasksHeader = ({
       </div>
       <button
         onClick={toggleShowScript}
-        className={` ${baseButtonClasses} ${
+        className={` ${baseButtonClasses} ml-2 ${
           !showScript
             ? "bg-indigo-300 text-violet-900 hover:bg-indigo-100"
             : "bg-white text-indigo-600 hover:bg-indigo-100 hover:text-violet-900"

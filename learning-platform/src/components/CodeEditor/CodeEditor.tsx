@@ -20,7 +20,7 @@ const CodeEditor = ({ code, onChange }: CodeEditorProps) => {
     <div className="border-2 border-indigo-300 rounded-lg shadow-sm overflow-hidden mb-3">
       <CodeMirror
         value={code}
-        height="500px"
+        height="55vh"
         extensions={[python(), fontSizeTheme]}
         onChange={(value) => onChange(value)}
         theme="light"
