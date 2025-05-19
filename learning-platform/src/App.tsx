@@ -11,7 +11,6 @@ import Tasks from "./views/Tasks/Tasks";
 function App() {
   return (
     <Router>
-      {/* <Navbar /> */}
       <Routes>
         <Route
           path="/"
