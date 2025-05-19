@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import Playground from "../../components/Playground/Playground";
 import TaskPanel, { Task } from "./TaskPanel/TaskPanel";
 import Script from "../Script/Script";
-import TasksHeader from "./TaskHeader/TaskHeader";
+import TasksNavbar from "../../navigation/TasksNavbar/TasksNavbar";
 
 interface TasksProps {
   tasks: Task[];
@@ -69,7 +69,7 @@ const Tasks = ({ tasks }: TasksProps = { tasks: [] }) => {
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-b from-indigo-400">
-      <TasksHeader
+      <TasksNavbar
         categories={categories}
         selectedCategory={selectedCategory}
         onCategorySelect={setSelectedCategory}

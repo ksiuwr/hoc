@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { usePyodide } from "../../hooks/usePyodide";
-import CodeEditor from "../CodeEditor/CodeEditor";
-import OutputPanel from "../OutputPanel/OutputPanel";
+import CodeEditor from "./CodeEditor/CodeEditor";
+import OutputPanel from "./OutputPanel/OutputPanel";
 
 const Playground = () => {
   const { run, loading } = usePyodide();

@@ -1,4 +1,4 @@
-interface TasksHeaderProps {
+interface TasksNavbarProps {
   categories: string[];
   selectedCategory: string;
   onCategorySelect: (cat: string) => void;
@@ -7,14 +7,14 @@ interface TasksHeaderProps {
   toggleShowScript: () => void;
 }
 
-const TasksHeader = ({
+const TasksNavbar = ({
   categories,
   selectedCategory,
   onCategorySelect,
   categoryCompletion,
   showScript,
   toggleShowScript,
-}: TasksHeaderProps) => {
+}: TasksNavbarProps) => {
   const baseButtonClasses =
     "px-4 whitespace-nowrap py-1 rounded-full transition duration-200 ease-in-out cursor-pointer";
   return (
@@ -60,4 +60,4 @@ const TasksHeader = ({
   );
 };
 
-export default TasksHeader;
+export default TasksNavbar;

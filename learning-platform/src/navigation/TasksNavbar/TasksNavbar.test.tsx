@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TaskHeader from './TaskHeader';
+import TaskHeader from './TasksNavbar';
 
 it('It should mount', () => {
   const div = document.createElement('div');
