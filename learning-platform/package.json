@@ -9,8 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm --prefix learning-platform run build",
-    "deploy": "gh-pages -d learning-platform/dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@codemirror/lang-python": "^6.1.7",
