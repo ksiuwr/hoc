@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d Online-Python-Learning-Platform"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@codemirror/lang-python": "^6.1.7",
