@@ -19,8 +19,8 @@ The project was inspired by the study sessions with school students which we hos
 See it in action [here](https://czarekmilek.github.io/Python-Learning-Platform).
 
 ## 🖼️ Screenshots
-![Tasks view](images\tasks-view.png)
-![Script overview](images\script-overview.png)
+![Tasks view](images/tasks-view.png)
+![Script overview](images/script-overview.png)
 
 ## ✨ Features
 
