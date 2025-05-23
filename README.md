@@ -11,8 +11,6 @@ The project was inspired by the study sessions with school students which we hos
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## 🔗 Live Demo
 
