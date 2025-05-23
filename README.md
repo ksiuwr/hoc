@@ -18,6 +18,7 @@ See it in action [here](https://czarekmilek.github.io/Python-Learning-Platform).
 
 ## 🖼️ Screenshots
 ![Tasks view](images/tasks-view.png)
+
 ![Script overview](images/script-overview.png)
 
 ## ✨ Features
