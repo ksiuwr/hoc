@@ -1,10 +1,10 @@
 ## Zadanie 1 (Łatwe)
 
-Wczytaj listę liczb rozdzielonych spacjami i **wypisz największą i najmniejszą wartość**.
+Wczytaj listę liczb rozdzielonych spacjami i **wypisz największą** oraz **najmniejszą wartość** wśród nich.
 
 ## Zadanie 2 (Średnie)
 
-Wczytaj listę liczb rozdzielonych spacjami i **wypisz ich sumę oraz średnią**.
+Wczytaj listę liczb rozdzielonych spacjami i **wypisz ich sumę** oraz **średnią**.
 
 ## Zadanie 3 (Średnie)
 
