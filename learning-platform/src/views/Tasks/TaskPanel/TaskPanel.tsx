@@ -54,9 +54,9 @@ const TaskPanel = ({ task, isDone, onToggle }: TaskPanelProps) => {
         children={task.description}
         remarkPlugins={[remarkGfm]}
         components={{
-          code({ inline, className, children, ...props }) {
+          code({ className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
-            return !inline && match ? (
+            return match ? (
               <SyntaxHighlighter PreTag="div" language={match[1]}>
                 {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
