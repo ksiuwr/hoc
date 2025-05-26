@@ -1,5 +1,9 @@
 import { Task } from "../views/Tasks/TaskPanel/TaskPanel";
 import basicRaw from "./tasks/basic.md?raw";
+import listsRaw from "./tasks/lists.md?raw";
+import stringsRaw from "./tasks/strings.md?raw";
+import mathRaw from "./tasks/math.md?raw";
+import bonusRaw from "./tasks/bonus.md?raw";
 
 function parseCategory(raw: string, category: string): Task[] {
   // Normalize line endings
@@ -26,4 +30,8 @@ function parseCategory(raw: string, category: string): Task[] {
 
 export const tasks: Task[] = [
   ...parseCategory(basicRaw, "Podstawy programowania"),
+  ...parseCategory(listsRaw, "Praca z listami"),
+  ...parseCategory(stringsRaw, "Operacje na tekstach"),
+  ...parseCategory(mathRaw, "Zadania matematyczne"),
+  ...parseCategory(bonusRaw, "Zadania dodatkowe"),
 ];
