@@ -32,18 +32,18 @@ Wczytaj liczbę i **sprawdź, czy jest parzysta**.
 
 ## Zadanie 9 (Średnie)
 
-Wczytaj liczbę i **sprawdź, czy jest liczbą pierwszą**.
-
-## Zadanie 10 (Średnie)
-
 Wczytaj liczbę i **oblicz jej silnię**. Silnia liczby to iloczyn wszystkich liczb przed nią
 
 (np. silnia z **`5`** to **`5! = 5 * 4 * 3 * 2 * 1`**).
 
-## Zadanie 11 (Średnie)
+## Zadanie 10 (Średnie)
 
 Wczytaj dwie liczby **`a`** oraz **`b`** i **wypisz wszystkie liczby całkowite od `a` do `b`**.
 
-## Zadanie 12 (Trudne)
+## Zadanie 11 (Średnie)
 
 Policz sumę liczb od **`1`** do **`100`** (użyj pętli **`while`** lub **`for`**).
+
+## Zadanie 12 (Trudne)
+
+Wczytaj liczbę i **sprawdź, czy jest liczbą pierwszą**.
