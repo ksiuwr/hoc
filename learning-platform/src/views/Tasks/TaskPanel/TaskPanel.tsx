@@ -1,3 +1,7 @@
+import ReactMarkdown from "react-markdown";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import remarkGfm from "remark-gfm";
+
 export interface Task {
   title: string;
   description: string;
@@ -46,7 +50,24 @@ const TaskPanel = ({ task, isDone, onToggle }: TaskPanelProps) => {
           )}
         </h2>
       </div>
-      <p className="text-gray-700 text-xl">{task.description}</p>
+      <ReactMarkdown
+        children={task.description}
+        remarkPlugins={[remarkGfm]}
+        components={{
+          code({ inline, className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || "");
+            return !inline && match ? (
+              <SyntaxHighlighter PreTag="div" language={match[1]}>
+                {String(children).replace(/\n$/, "")}
+              </SyntaxHighlighter>
+            ) : (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          },
+        }}
+      />
     </div>
   );
 };

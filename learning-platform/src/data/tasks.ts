@@ -1,219 +1,29 @@
 import { Task } from "../views/Tasks/TaskPanel/TaskPanel";
+import basicRaw from "./tasks/basic.md?raw";
+
+function parseCategory(raw: string, category: string): Task[] {
+  // Normalize line endings
+  const text = raw.replace(/\r\n/g, "\n");
+
+  // Split on "## " at start of line
+  const sections = text.split(/^## /m).filter((s) => s.trim().length > 0);
+
+  return sections.map((section) => {
+    // First line is for example "Zadanie 1 (Łatwe)"
+    const [headingLine, ...rest] = section.split("\n");
+
+    // Match up to the first "(" and capture difficulty inside
+    const m = headingLine.match(/^(.*?)\s*\(([^)]+)\)/);
+    const title = m ? m[1].trim() : headingLine.trim();
+    const difficulty = m ? m[2].trim() : "Średnie";
+
+    // The rest is just the markdown description
+    const description = rest.join("\n").trim();
+
+    return { title, description, completed: false, category, difficulty };
+  });
+}
 
 export const tasks: Task[] = [
-  {
-    title: "Zadanie 1",
-    description: `Wczytaj dwie liczby i wypisz ich sumę (+)`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 2",
-    description: `Wczytaj dwie liczby i wypisz ich iloczyn (*)`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 3",
-    description: `Wczytaj dwie liczby i sprawdź, czy pierwsza jest mniejsza od drugiej`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 4",
-    description: `Wczytaj wiek i sprawdź, czy jesteś pełnoletni`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 5",
-    description: `Wczytaj napis i liczbę n, wypisz ten napis n razy`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 6",
-    description: `Wczytaj imię i wypisz „Hello, [imię]”`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 7",
-    description: `Wczytaj dwie liczby i wypisz resztę z dzielenia (%)`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 8",
-    description: `Wczytaj liczbę i sprawdź, czy jest parzysta`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 9",
-    description: `Wczytaj liczbę i sprawdź, czy jest liczbą pierwszą`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 10",
-    description: `Wczytaj liczbę i oblicz silnię (n!)`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 11",
-    description: `Wczytaj dwie liczby a oraz b i wypisz wszystkie liczby całkowite od a do b`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 12",
-    description: `Policz sumę liczb od 1 do 100 (użyj pętli while lub for)`,
-    completed: false,
-    category: "Podstawy programowania",
-    difficulty: "Trudne",
-  },
-  {
-    title: "Zadanie 1",
-    description: `Wczytaj listę liczb rozdzielonych spacjami i wypisz największą i najmniejszą wartość`,
-    completed: false,
-    category: "Praca z listami",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 2",
-    description: `Wczytaj listę liczb rozdzielonych spacjami i wypisz ich sumę oraz średnią`,
-    completed: false,
-    category: "Praca z listami",
-    difficulty: "Średnie",
-  },
-
-  {
-    title: "Zadanie 3",
-    description: `Wczytaj liczbę i wypisz sumę jej cyfr`,
-    completed: false,
-    category: "Praca z listami",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 4",
-    description: `Wczytaj listę liczb i usuń z niej duplikaty`,
-    completed: false,
-    category: "Praca z listami",
-    difficulty: "Trudne",
-  },
-  {
-    title: "Zadanie 5",
-    description: `Wczytaj zdanie i wypisz liczbę słów w tym zdaniu`,
-    completed: false,
-    category: "Praca z listami",
-    difficulty: "Trudne",
-  },
-  {
-    title: "Zadanie 1",
-    description: `Wczytaj napis i wypisz go od końca`,
-    completed: false,
-    category: "Operacje na tekstach",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 2",
-    description: `Wczytaj napis i wypisz liczbę jego samogłosek (a, e, i, o, u, y)`,
-    completed: false,
-    category: "Operacje na tekstach",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 3",
-    description: `Wczytaj kolejne napisy, aż do „STOP”, a następnie wypisz je w odwrotnej kolejności`,
-    completed: false,
-    category: "Operacje na tekstach",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 4",
-    description: `Wczytaj napis i wypisz „Tak”, jeśli jest palindromem, „Nie” w przeciwnym wypadku`,
-    completed: false,
-    category: "Operacje na tekstach",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 1",
-    description: `Wczytaj temperaturę w stopniach Celsjusza i zamień ją na Fahrenheita i Kelwiny (Wzory: K = C + 273.15  F = C × 1.8 + 32)`,
-    completed: false,
-    category: "Zadania matematyczne",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 2",
-    description: `Wczytaj długość i szerokość prostokąta, oblicz pole i obwód`,
-    completed: false,
-    category: "Zadania matematyczne",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 3",
-    description: `Wczytaj liczbę centymetrów i przelicz na cale (1 cal = 2.54 cm)`,
-    completed: false,
-    category: "Zadania matematyczne",
-    difficulty: "Łatwe",
-  },
-  {
-    title: "Zadanie 4",
-    description: `Wczytaj promień r i oblicz pole koła (πr², π = 3.14).`,
-    completed: false,
-    category: "Zadania matematyczne",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 5",
-    description: `Wczytaj liczbę n i wypisz n pierwszych liczb nieparzystych`,
-    completed: false,
-    category: "Zadania matematyczne",
-    difficulty: "Średnie",
-  },
-
-  {
-    title: "Zadanie 1",
-    description: `Wczytaj liczbę n i narysuj kwadrat złożony z gwiazdek n x n`,
-    completed: false,
-    category: "Zadania dodatkowe",
-    difficulty: "Średnie",
-  },
-  {
-    title: "Zadanie 2",
-    description: `Narysuj połowę piramidy złożonej z gwiazdek (*). Wskazówka: użyj pętli, aby wyświetlić odpowiednią liczbę gwiazdek.`,
-    completed: false,
-    category: "Zadania dodatkowe",
-    difficulty: "Trudne",
-  },
-  {
-    title: "Zadanie 3",
-    description: `Wypisz tabliczkę mnożenia od 1 do 10. Wskazówka: użyj dwukrotnie pętli.`,
-    completed: false,
-    category: "Zadania dodatkowe",
-    difficulty: "Trudne",
-  },
-  {
-    title: "Zadanie 4",
-    description: `Napisz prostą grę: program losuje liczbę od 1 do 100, użytkownik zgaduje, a program podpowiada „za mało”, „za dużo” lub „trafione” aż do odgadnięcia.
-  Wskazówka:
-  import random
-  num = random.randint(1, 100)`,
-    completed: false,
-    category: "Zadania dodatkowe",
-    difficulty: "Trudne",
-  },
+  ...parseCategory(basicRaw, "Podstawy programowania"),
 ];
