@@ -14,7 +14,7 @@ The project was inspired by the study sessions with school students which we hos
 
 ## 🔗 Live Demo
 
-See it in action [here](https://czarekmilek.github.io/Python-Learning-Platform).
+See it in action [here](https://ksiuwr.github.io/hoc).
 
 ## 🖼️ Screenshots
 ![Tasks view](images/tasks-view.png)
@@ -83,7 +83,3 @@ npm run build         # or yarn build
 ```
 
 The optimized files will be in `dist/`.
-
----
-
-*Thank you for checking out my little project!*
