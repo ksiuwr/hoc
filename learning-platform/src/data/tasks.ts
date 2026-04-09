@@ -29,9 +29,6 @@ function parseCategory(raw: string, category: string): Task[] {
 }
 
 export const tasks: Task[] = [
-  ...parseCategory(basicRaw, "Podstawy programowania"),
-  ...parseCategory(listsRaw, "Praca z listami"),
-  ...parseCategory(stringsRaw, "Operacje na tekstach"),
-  ...parseCategory(mathRaw, "Zadania matematyczne"),
+  ...parseCategory(basicRaw, "Zadanie podstawowe"),
   ...parseCategory(bonusRaw, "Zadania dodatkowe"),
 ];
