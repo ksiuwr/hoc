@@ -54,6 +54,9 @@ const TaskPanel = ({ task, isDone, onToggle }: TaskPanelProps) => {
         children={task.description}
         remarkPlugins={[remarkGfm]}
         components={{
+          p({ children }) {
+            return <p className="mb-4 last:mb-0">{children}</p>;
+          },
           code({ className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || "");
             return match ? (
