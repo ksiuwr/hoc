@@ -1,7 +1,7 @@
 # Hour of Code 2026 - Zadania Programistyczne
 
 ### Zadanie 1: Skarbiec (poziom podstawowy)
-W skarbcu są srebre i złote monety. Jedna złota moneta jest warta tyle co trzy srebrne, a za jedną srebrną monetę można kupić dwie owce. Napisz program, w którym wygodnie można policzyć ile owiec można kupić wydając całą zawartość skarbca.
+W skarbcu są srebre i złote monety. Jedna złota moneta jest warta tyle co trzy srebrne, a za jedną srebrną monetę można kupić dwie owce. Napisz program, w którym wygodnie można policzyć ile owiec można kupić wydając całą zawartość skarbca.  
 
 **Matematyka:** Dodawanie i mnożenie.
 
